@@ -37,4 +37,4 @@ Authentication/
 ├── app.js                 # Entry point of the app
 ├── db.js                  # MongoDb connection
 ├── new.http               # For testing the Apis
-├── package.json            #for package details
+├── package.json            # For package details
