@@ -1,71 +1,40 @@
-🔐 AuthFlow - Simple & Secure Authentication API 🚀
-A lightweight Node.js authentication API with email verification ✉️, password testing 🛡️, and React Native frontend integration 📱.
+# 🔐 Authentication Backend API
 
-🌟 Features
-User Registration 📝
+This is the backend authentication service for the **Mirogate** (Authentication - https://github.com/OwenLovesCoding/authflow) mobile app. It handles user registration, OTP (One-Time Password) generation, email sending, and OTP verification using Node.js, Express, and MongoDB.
 
-Email Verification ✅ (with Nodemailer)
+---
 
-Secure Password Hashing 🔒 (using bcrypt)
+## 🧩 Features
 
-JWT Authentication 🎟️
+- User email and password registration
+- Secure OTP generation and email sending
+- OTP validation endpoint
+- User verification via `isVerified` flag in the database
+- Clean and minimal authentication microservice
 
-React Native Demo App 📱 (coming soon!)
+---
 
-🛠️ Tech Stack
-Backend	Frontend (Future)
-Node.js	React Native
-Express	Expo
-MongoDB	Tailwind CSS
-JWT
-🚀 Quick Start
-1️⃣ Clone & Install
-bash
-git clone https://github.com/your-repo/authflow.git
-cd authflow
-npm install
-2️⃣ Set Up Environment
-Create a .env file:
+## 🛠️ Tech Stack
 
-env
-MONGODB_URI=your_mongodb_connection_string
-JWT_SECRET=your_super_secret_key
-GMAIL_USER=your_email@gmail.com
-GMAIL_PASS=your_app_password
-3️⃣ Run the Server
-bash
-npm start
-4️⃣ Test the API
-Register: POST /api/auth/register
+- **Node.js**
+- **Express.js**
+- **MongoDB** with **Mongoose**
+- **CORS** for handling cross-origin requests
+- **Dotenv** for environment variable management
+- **Nodemailer** (for sending OTPs via email)
 
-Verify Email: GET /api/auth/verify?token=xxx
+---
 
-Login: POST /api/auth/login
+## 📂 Project Structure
 
-🔍 Why AuthFlow?
-✅ Simple & Clean – No bloat, just auth!
-✅ Email Verification – Secure sign-ups 📧
-✅ JWT Protected – Safe & scalable 🔐
-✅ Ready for React Native – Easy frontend integration 📱
-
-🎯 Future Plans
-Password Strength Checker 💪
-
-OAuth (Google/GitHub) 🌐
-
-Rate Limiting ⏱️
-
-React Native Demo App 📲
-
-👨‍💻 Author
-Owen Iraoya
-📧 iraoyaowen5@gmail.com
-🐦 @your_twitter
-
-📜 License
-MIT © 2024 - Free to use, but credit is appreciated!
-
-🌟 Star this repo if you like it! ⭐
-🐞 Found a bug? Open an issue! 🛠️
-
-🎉 Happy Coding! 🚀
+```bash
+Authentication/
+├── controllers/
+│   └── auth.js     # Logic for OTP sending and verification
+├── models/
+│   └── signUp.js               # Mongoose schema for user
+├── .env                      # Environment variables
+├── app.js                 # Entry point of the app
+├── db.js                  # MongoDb connection
+├── new.http               # For testing the Apis
+├── package.json            #for package details
